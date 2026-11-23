@@ -1,0 +1,93 @@
+/* CSS 초기화 */
+* {
+  box-sizing: border-box;
+}
+
+/* 컬러 팔레트 디자인 시스템 (HiFUS 추출 팔레트) */
+:root {
+  /* Primary Colors */
+  --color-primary: #E8343F;
+  --color-primary-light: #F26B73;
+  --color-primary-dark: #C21F2A;
+
+  /* Secondary Colors */
+  --color-secondary: #6B7A8F;
+  --color-accent: #D9B98F;
+
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F7F7F7;
+
+  /* Text Colors */
+  --color-text-primary: #2B2B2B;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+
+  /* Border Colors */
+  --color-border: #DDDDDD;
+  --color-border-strong: #BBBBBB;
+
+  /* Interactive Colors */
+  --color-button-primary: #E8343F;
+  --color-button-hover: #C21F2A;
+  --color-link: #2B2B2B;
+  --color-link-hover: #E8343F;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #FF5A64;
+    --color-primary-light: #FF8A92;
+    --color-primary-dark: #E8343F;
+
+    --color-secondary: #98A6BA;
+    --color-accent: #C9A678;
+
+    --color-bg-primary: #16181D;
+    --color-bg-secondary: #20232A;
+
+    --color-text-primary: #F2F2F2;
+    --color-text-secondary: #C4C7CC;
+    --color-text-muted: #8E939B;
+
+    --color-border: #343841;
+    --color-border-strong: #4A4F5A;
+
+    --color-button-primary: #E8343F;
+    --color-button-hover: #FF5A64;
+    --color-link: #F2F2F2;
+    --color-link-hover: #FF5A64;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-muted: var(--color-text-secondary);
+    --color-border: var(--color-border-strong);
+  }
+}
+
+/* HTML, Body 초기화 */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+}
+
+/* Root 앱 컨테이너 설정 */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 키보드 포커스 링 */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
