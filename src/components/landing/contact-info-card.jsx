@@ -6,7 +6,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
-import { CONTACT_INFO } from '../../utils/contact-info';
+import { COBALT, CONTACT_INFO } from '../../utils/contact-info';
 
 const ROW_ICON_SX = {
   flex: 'none',
@@ -86,8 +86,8 @@ function ContactInfoCard() {
           size="large"
           disableElevation
           sx={ {
-            bgcolor: 'var(--color-button-primary)',
-            '&:hover': { bgcolor: 'var(--color-button-hover)' },
+            bgcolor: COBALT.main,
+            '&:hover': { bgcolor: COBALT.dark },
             py: 1.5,
             fontWeight: 700,
           } }

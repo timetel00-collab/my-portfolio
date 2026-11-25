@@ -20,3 +20,10 @@ export const CONTACT_INFO = {
 };
 
 export const CUSTOMER_TYPES = ['기업', '관공서', '일반 고객'];
+
+/** Contact 섹션 전용 코발트블루 컬러 */
+export const COBALT = {
+  main: '#0047AB',
+  dark: '#003380',
+  tint: '#EAF0FA',
+};

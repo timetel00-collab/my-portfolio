@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { supabase } from '../../lib/supabase-client';
-import { CUSTOMER_TYPES } from '../../utils/contact-info';
+import { COBALT, CUSTOMER_TYPES } from '../../utils/contact-info';
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
@@ -113,8 +113,8 @@ function ContactForm() {
           sx={ {
             '& .MuiToggleButton-root': { px: 2.5, color: 'var(--color-text-secondary)' },
             '& .Mui-selected, & .Mui-selected:hover': {
-              bgcolor: 'var(--color-text-primary)',
-              color: 'var(--color-bg-primary)',
+              bgcolor: COBALT.main,
+              color: '#FFFFFF',
             },
           } }
         >
@@ -187,8 +187,8 @@ function ContactForm() {
         sx={ {
           py: 1.5,
           fontWeight: 700,
-          bgcolor: 'var(--color-button-primary)',
-          '&:hover': { bgcolor: 'var(--color-button-hover)' },
+          bgcolor: COBALT.main,
+          '&:hover': { bgcolor: COBALT.dark },
         } }
       >
         { isBusy ? '접수 중...' : '문의 접수하기' }

@@ -1,5 +1,6 @@
 import { Box, Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import { COBALT } from '../../utils/contact-info';
 import ContactInfoCard from './contact-info-card';
 import ContactForm from './contact-form';
 
@@ -32,11 +33,19 @@ function ContactSection() {
     <Box
       component="section"
       id="contact"
-      sx={ { width: '100%', bgcolor: 'var(--color-bg-secondary)', py: { xs: 4, md: 8 } } }
+      sx={ {
+        width: '100%',
+        bgcolor: 'var(--color-bg-secondary)',
+        py: { xs: 4, md: 8 },
+        '& .MuiOutlinedInput-root.Mui-focused fieldset': { borderColor: COBALT.main },
+        '& .MuiInputLabel-root.Mui-focused': { color: COBALT.main },
+        '& .MuiCheckbox-root.Mui-checked': { color: COBALT.main },
+        '& :focus-visible': { outlineColor: COBALT.main },
+      } }
     >
       <Container maxWidth="lg" sx={ { px: { xs: 2, md: 3 } } }>
         <Box sx={ { maxWidth: 640, mb: { xs: 3, md: 5 } } }>
-          <Box sx={ { width: 48, height: 4, bgcolor: 'var(--color-primary)', borderRadius: 2, mb: 2 } } />
+          <Box sx={ { width: 48, height: 4, bgcolor: COBALT.main, borderRadius: 2, mb: 2 } } />
           <Box
             component="h2"
             sx={ {
