@@ -68,6 +68,7 @@ function ContactInfoCard() {
         <Box sx={ VALUE_SX }>{ address }</Box>
       </InfoRow>
 
+      { hours.length > 0 && (
       <InfoRow icon={ <AccessTimeIcon fontSize="small" /> } label="영업시간">
         <Box sx={ { display: 'grid', gap: 0.25 } }>
           { hours.map(({ day, time }) => (
@@ -78,6 +79,7 @@ function ContactInfoCard() {
           )) }
         </Box>
       </InfoRow>
+      ) }
 
       <Stack spacing={ 1.5 }>
         <Button
