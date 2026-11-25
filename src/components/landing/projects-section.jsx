@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Box, Button, Card, CardContent, Container } from '@mui/material';
 import Grid from '@mui/material/Grid';
+import { imageUrl } from '../../utils/image-url';
 
 const PROJECTS = [
-  { title: '세파티 가구', desc: '가구 쇼핑 + 커뮤니티 웹앱', tag: 'React · Supabase', color: '#6B7A8F' },
-  { title: 'My Portfolio', desc: '반응형 포트폴리오 사이트', tag: 'React · MUI', color: '#D9B98F' },
-  { title: '견적 문의 시스템', desc: '문의 접수와 첨부파일 저장', tag: 'Supabase · RLS', color: '#E8343F' },
-  { title: 'UI 테스트', desc: '컴포넌트 실험 프로젝트', tag: 'Vite · React', color: '#2B2B2B' },
+  { title: '세파티 가구', desc: '가구 쇼핑 + 커뮤니티 웹앱', tag: 'React · Supabase', image: 'project-1.jpg' },
+  { title: 'My Portfolio', desc: '반응형 포트폴리오 사이트', tag: 'React · MUI', image: 'project-2.jpg' },
+  { title: '견적 문의 시스템', desc: '문의 접수와 첨부파일 저장', tag: 'Supabase · RLS', image: 'project-3.jpg' },
+  { title: 'UI 테스트', desc: '컴포넌트 실험 프로젝트', tag: 'Vite · React', image: 'project-4.jpg' },
 ];
 
 /**
@@ -30,24 +31,16 @@ function ProjectsSection() {
           </Box>
         </Box>
         <Grid container spacing={ { xs: 2, md: 3 } }>
-          { PROJECTS.map(({ title, desc, tag, color }) => (
+          { PROJECTS.map(({ title, desc, tag, image }) => (
             <Grid key={ title } size={ { xs: 12, sm: 6, md: 3 } }>
               <Card elevation={ 0 } sx={ { height: '100%', border: '1px solid var(--color-border)', borderRadius: 2 } }>
                 <Box
-                  role="img"
-                  aria-label={ `${ title } 썸네일` }
-                  sx={ {
-                    height: 140,
-                    bgcolor: color,
-                    display: 'grid',
-                    placeItems: 'center',
-                    color: '#FFFFFF',
-                    fontSize: '2rem',
-                    fontWeight: 700,
-                  } }
-                >
-                  { title.charAt(0) }
-                </Box>
+                  component="img"
+                  src={ imageUrl(image) }
+                  alt={ `${ title } 썸네일` }
+                  loading="lazy"
+                  sx={ { display: 'block', width: '100%', height: 150, objectFit: 'cover' } }
+                />
                 <CardContent>
                   <Box sx={ { fontWeight: 700, color: 'var(--color-text-primary)', mb: 0.5 } }>{ title }</Box>
                   <Box sx={ { fontSize: '0.9rem', color: 'var(--color-text-secondary)', mb: 1 } }>{ desc }</Box>
